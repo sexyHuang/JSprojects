@@ -49,7 +49,7 @@ var chartData = {};
 var pageState = {
 	nowSelectCity: "北京",
 	nowGraTime: "day"
-}
+};
 
 /**
  * 渲染图表
@@ -82,11 +82,11 @@ function renderChart() {
 function graTimeChange(event) {
   // 确定是否选项发生了变化 
 	var target = event.target;
-	if(target.value == pageState.nowGraTime){
+	if(target.value == pageState.nowGraTime || !target.value){
 		return;
 	}
 	pageState.nowGraTime = target.value;
-	console.log(target.value);
+	//console.log(target.value);
   // 设置对应数据
 	 initAqiChartData();
 
