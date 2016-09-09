@@ -1,0 +1,32 @@
+.wapper {
+    border: 1px solid black;
+    padding: 20px;
+    width: 650px;
+    margin: 10px auto;
+}
+.wapper .itemGroup{
+    margin-bottom: 10px;
+    height: 30px;
+}
+.wapper label {
+    display: inline-block;
+    width: 120px;
+}
+.wapper .info {
+    display: inline-block;
+    font-size: 12px;
+    margin-left: 5px;
+}
+.wapper input[type="button"] {
+    color: white;
+    background: skyblue;
+    border-width: 0px;
+    padding: 3px 10px;
+    font-size: 17px;
+    font-weight: bold;
+    border-radius: 5px;
+    margin-left: 207px;
+}
+.wapper input[type="button"]:hover {
+    background: dodgerblue;
+}

@@ -1,0 +1,67 @@
+body {
+    font: 12px "Microsoft Yahei";
+}
+form {
+	width: 350px;
+	overflow: auto;
+	margin: auto;
+	
+}
+form>div {
+  height: 50px;
+}
+.label {
+    display: inline-block;
+    padding: 3px 10px;
+    width: 100px;
+    text-align: right;
+	font-size: 15px;
+	font-weight: bolder;
+}
+input[type="button"] {
+	float: right;
+    font-size:  15px;
+	letter-spacing: 10px;
+    font-weight: bolder;
+    padding: 5px 30px 5px 40px;
+    border-radius: 3px;
+    border: 0px solid white;
+    background-color: skyblue;
+    color: white;
+}
+input[type="button"]:hover{
+    background-color: cornflowerblue;
+}
+.input {
+	margin-left: 14px;
+	border: 1px solid grey;
+    padding: 5px 10px;
+   	border-radius: 3px;	    
+}
+.input:focus {
+   border: 1px solid aqua;
+   box-shadow: 0 0 1px aqua;
+}
+.tip {
+    margin-left: 134px;
+    display: none;
+}
+.input:focus~span {
+	display: inline;
+    color: grey;
+}
+
+.i_wrong {
+    border-color: red;
+}
+.i_right {
+    border-color: limegreen;
+}
+.wrong {
+    display: inline;
+    color: red;
+}
+.right {
+    display: inline;
+    color: limegreen;
+}

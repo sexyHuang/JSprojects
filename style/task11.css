@@ -1,0 +1,29 @@
+body {
+	padding: 10px 25px;
+}
+
+body div {
+	font-size: 13px;
+	width: 80%;
+	display: none;
+	padding: 5px 15px 5px 5px;
+	border: 1px solid black;
+	margin: 10px 3px;
+	background: white;
+	border-radius: 5px;
+}
+body>div {
+	display: block;
+	width: 20%;
+
+}
+
+.open>div {
+	display: block;
+}
+.select {
+	background: red;
+}
+.pass {
+	background: blue;
+}

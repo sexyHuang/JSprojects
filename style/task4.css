@@ -1,0 +1,8 @@
+.right {
+	display: none;
+}
+.wrong {
+	display: inline;
+	color: red;
+	font-size: 15px;
+}

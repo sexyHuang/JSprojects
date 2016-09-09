@@ -1,0 +1,85 @@
+fieldset {
+	border-radius: 10px;
+}
+fieldset legend {
+	color: red;
+	font: bold 20px "Microsoft Yahei";
+
+}
+fieldset div {
+	display: inline-block;
+	width: 300px;
+	vertical-align: middle;
+}
+.tips {
+	float: right;
+	margin: 10px;
+}
+.tips div {
+	font-size: 12px;
+	width: 60px;
+	height:15px;
+	color: white;
+	padding: 0 5px;
+	text-align: right;
+}
+.tips div:nth-of-type(1){
+	background:#00E500;
+	color: black;
+}
+.tips div:nth-of-type(2){
+	background:#FFFF00;
+	color: black;
+}
+.tips div:nth-of-type(3){
+	background:#FF7F00;
+	color: gray;
+}
+.tips div:nth-of-type(4){
+	background:#FF0000;
+	color: gray;
+}
+.tips div:nth-of-type(5){
+	background:#9A004B;
+}
+.tips div:nth-of-type(6){
+	background:#7F001E;
+}
+.aqi-chart-wrap {
+	overflow: hidden;
+	margin: auto;
+	height: 550px;
+	display: flex;
+	justify-content:space-around;
+	-webkit-justify-content: space-around;
+	align-items: flex-end;
+	-webkit-align-items: flex-end;
+	padding: 0 100px;
+}
+.aqi-chart-wrap div {
+	position: relative;
+	width: 100px;
+	margin-left: 2px;
+	animation: enter 1s;
+	-webkit-animation: enter 1s;
+}
+@keyframes enter{
+	0%{bottom: -100%;}
+	100%{bottom : 0;}
+}
+.aqi-chart-wrap div:hover>.detail {
+	display: inline-block;
+}
+.aqi-chart-wrap div .detail {
+	text-align: center;
+	background-color: white;
+	border: 1px solid black;
+	border-radius: 5px;
+	position: absolute;
+	display: none;
+	width: 105px;
+	font-size: 10px;
+	top: -35px;
+	z-index: 10;
+	opacity: 0.8;
+}

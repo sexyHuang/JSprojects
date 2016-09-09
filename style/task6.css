@@ -1,0 +1,114 @@
+body {
+    text-align: center;
+
+}
+
+.consoler {
+    margin: 10px auto;
+    border: 1px solid blueviolet;
+    border-radius: 10px;
+
+    width: 450px;
+    text-align: left;
+
+}
+
+.consoler legend {
+    color: slateblue;
+    font-size: 20px;
+    font-weight: bold;
+
+}
+
+.consoler > div {
+    border-radius: 10px;
+    margin-top: 5px;
+    background: lightblue;
+}
+
+.consoler > div:first-child {
+    margin: 0;
+}
+
+.consoler input {
+    color: blueviolet;
+    font-family: "Microsoft Yahei";
+    border-radius: 4px;
+    border: 1px solid blueviolet;
+    margin: 5px;
+}
+
+.consoler input[type="text"] {
+    background: ghostwhite;
+    padding: 2px;
+    display: inline-block;
+    width: 150px;
+}
+
+#queue {
+    display: inline-block;
+    box-sizing: border-box;
+    height: 350px;
+    text-align: center;
+    overflow: hidden;
+    border-bottom: 1px solid blueviolet;
+
+}
+
+#queue .sort_div {
+    display: inline-block;
+    width: 10px;
+    height: 100%;
+    margin: 0 3px;
+    position: relative;
+    box-sizing: border-box;
+}
+.ani {
+    animation: enter 1s;
+    -webkit-animation: enter 1s;
+}
+
+@keyframes enter{
+    0%{bottom: -100%;}
+    100%{bottom : 0;}
+}
+
+.wrong {
+    display: inline;
+    color: red;
+    font-size: 13px;
+}
+
+.right {
+    display: none;
+}
+
+.sort_span {
+    width: 100%;
+    display: block;
+    height: 50%;
+    background: #ddd;
+    position: absolute;
+    bottom: 0;
+}
+
+.sort_span_blue {
+    background: black;
+}
+
+.sort_span_green {
+    background: green;
+}
+
+.sort_span_tag {
+    background: red;
+}
+
+.sort_span_in {
+    width: 100%;
+    display: block;
+    background: red;
+    position: absolute;
+    bottom: 0;
+
+}

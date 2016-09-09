@@ -1,0 +1,38 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+	<link rel="stylesheet" type="text/css" href="style/task6.css">
+	<title>排序算法动画展示</title>
+  </head>
+  <body>
+	<fieldset class="consoler">
+		<legend>控制器</legend>
+		<div>
+	  	<input type="text" id="numtxt" placeholder="请输入要生成柱体的高度"><span class="right">请输入纯数字！范围[10-100]</span><br>
+	  	<input type="button" value="左侧入">
+	  	<input type="button" value="右侧入">
+	  	<input type="button" value="左侧出">
+	  	<input type="button" value="右侧出">
+		</div>
+		<div>
+	  	<input type="button" class="sortBtn" id="quickSort" value="快速排序">
+			<input type="button" class="sortBtn" id="bubbleSort" value="冒泡排序">
+			<input type="button" class="sortBtn" id="selectSort" value="选择排序">
+			<input type="button" class="sortBtn" id="insertSort" value="插入排序">
+		</div>
+		<div>
+	  	<input type="text" id="randomCount" placeholder="请输入要生成柱体的数量">
+	 	 	<input type="button" id="random" value="随机生成"><br>
+			<span class="right">请输入纯数字！范围[1-60]</span>
+		</div>
+		<div>
+			<input type="button" class="speedChange" id="speedup" value="加速">
+			<input type="button" class="speedChange" id="speeddown" value="减速">
+		</div>
+	</fieldset>
+	<div id="queue">
+	</div>
+	<script src="script/task6.js"></script>
+  </body>
+</html>

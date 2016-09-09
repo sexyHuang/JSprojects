@@ -1,0 +1,27 @@
+body {
+	padding: 10px 25px;
+}
+
+body div {
+	display: inline-flex;
+	display: -webkit-inline-flex;
+	justify-content: space-around;
+	-webkit-justify-content: space-around;
+	padding: 5px 5px;
+	border: 1px solid black;
+	margin: 10px 3px;
+	align-items: center;
+	background: white;
+}
+body>div {
+	display: flex;
+	display: -webkit-flex;
+	width: 100%;
+
+}
+.select {
+	background: red;
+}
+.pass {
+	background: blue;
+}

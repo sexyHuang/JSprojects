@@ -1,0 +1,40 @@
+body {
+	padding: 10px 25px;
+}
+/* body div {
+	margin:auto;
+	display: inline-block;
+	border: 1px solid black;
+	padding: 10px 2%;
+	vertical-align: middle;
+	width: 48%;
+	background: white;
+	box-sizing: border-box;
+}
+body>div {
+	
+	display: block;
+	margin-top: 10px;
+	width: 48%;
+}  */
+body div {
+	display: inline-flex;
+	display: -webkit-inline-flex;
+	justify-content: space-around;
+	-webkit-justify-content: space-around;
+	width: 43%;
+	padding: 5px 0;
+	border: 1px solid black;
+	margin: 10px auto;
+	align-items: center;
+	background: white;
+}
+body>div {
+	display: flex;
+	display: -webkit-flex;
+	width: 50%;
+
+}
+.select {
+	background: red;
+}
