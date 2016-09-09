@@ -5,9 +5,20 @@ var queue = document.getElementById("queue");
 var timer = null;
 var speed = 50;
 var sortWay;
+
+/**
+ * 排序算法类
+ * @constructor
+ */
 function Sort() {
 
 }
+
+/**
+ * 冒泡排序
+ * @param arr
+ * @returns {*}
+ */
 Sort.prototype.bubbleSort = function (arr) {
     var resArr = arr.slice(), len = resArr.length, i, j, temp, len_j = len - 1, sortOK;
     for (i = 0; i < len - 1; i++) {
@@ -30,6 +41,12 @@ Sort.prototype.bubbleSort = function (arr) {
     }
     return resArr;
 };
+
+/**
+ * 插入排序
+ * @param arr
+ * @returns {*}
+ */
 Sort.prototype.insertSort = function (arr) {
     var resArr = arr.slice(), i, j, len = resArr.length, temp;
     for (i = 1; i < len; i++) {
@@ -53,6 +70,12 @@ Sort.prototype.insertSort = function (arr) {
     }
     return resArr;
 };
+
+/**
+ * 选择排序
+ * @param arr
+ * @returns {*}
+ */
 Sort.prototype.selectSort = function (arr) {
     var resArr = arr.slice(), len = resArr.length, tag, i, j, len_j = len, temp;
     for (i = 0; i < len - 1; i++) {
@@ -74,6 +97,15 @@ Sort.prototype.selectSort = function (arr) {
     }
     return resArr;
 };
+
+/**
+ * 快速排序
+ * @param arr 目标数组
+ * @param a 起始位置
+ * @param b 结束位置
+ * @param qArr 操作数组
+ * @returns {*}
+ */
 Sort.prototype.quickSort = function (arr, a, b, qArr) {
     var leftArr = [], rightArr = [], len = arr.length, i, k, tag, tmp, j, lb, ra;
     if (a == undefined && b == undefined) {
@@ -114,8 +146,22 @@ Sort.prototype.quickSort = function (arr, a, b, qArr) {
     arguments.callee(rightArr, ra, b, qArr);
     return qArr;
 };
+
+/**
+ * 排序动画DOM操作类
+ * @constructor
+ */
 function SortDOM() {
     var html, item, spanClass;
+
+    /**
+     * 快速排序DOM
+     * @param arr
+     * @param a
+     * @param b
+     * @param tagIndex
+     * @param k
+     */
     this.quickSortDOM = function (arr, a, b, tagIndex, k) {
         html = '';
         item = '';
@@ -136,6 +182,13 @@ function SortDOM() {
         }
         queue.innerHTML = html;
     };
+
+    /**
+     * 冒泡
+     * @param arr
+     * @param tagIndex
+     * @param e
+     */
     this.bubbleSortDOM = function (arr, tagIndex, e) {
         html = '';
         item = '';
@@ -152,6 +205,14 @@ function SortDOM() {
         }
         queue.innerHTML = html;
     };
+
+    /**
+     * 选择
+     * @param arr
+     * @param tagIndex
+     * @param pass
+     * @param end
+     */
     this.selectSortDOM = function (arr, tagIndex, pass, end) {
         html = '';
         item = '';
@@ -174,6 +235,13 @@ function SortDOM() {
         }
         queue.innerHTML = html;
     };
+
+    /**
+     * 插入
+     * @param arr
+     * @param pass
+     * @param end
+     */
     this.insertSortDOM = function (arr, pass, end) {
         html = '';
         item = '';
@@ -217,13 +285,25 @@ function SortDOM() {
  }
  queue.innerHTML = html;
  }*/
+
+/**
+ * 推入历史状态
+ */
 function pushHis() {
     arrHis.push(arguments);
 }
+
+/**
+ * 动画方法
+ */
 function animation() {
     var that = this;
     var sortDOM1 = new SortDOM();
 
+    /**
+     *
+     * @param sortWay
+     */
     this.start = function (sortWay) {
         var sortDom = sortWay + 'DOM';
         timer = setInterval(function () {
@@ -239,6 +319,10 @@ function animation() {
     };
 }
 
+/**
+ * 创建随机数组和其dom元素
+ * @param num
+ */
 function creatArr(num) {
 
     var arrLen = num;
@@ -246,23 +330,34 @@ function creatArr(num) {
     for (var i = 0; i < arrLen; i++) {
         initArr.push(Math.floor(Math.random() * 90 + 10));
     }
-    initDom(initArr,true);
+    initDom(initArr, true);
     //console.log(arr);
 }
-function initDom(arr,ani) {
+
+/**
+ * 初始化DOM
+ * @param arr
+ * @param ani
+ */
+function initDom(arr, ani) {
     var divSpan = 'sort_div';
-    if(ani == true){
+    if (ani == true) {
         divSpan += ' ani';
     }
     var arr = arr || [];
     var html = '', item = '', spanClass = '', len = arr.length, i = 0;
     for (i = 0; i < len; i++) {
-        item = '<div class="'+divSpan+'"><span class="sort_span" style="height: ' + arr[i] + '%"></span></div>';
+        item = '<div class="' + divSpan + '"><span class="sort_span" style="height: ' + arr[i] + '%"></span></div>';
         html = html + item;
     }
 
     queue.innerHTML = html;
 }
+
+/**
+ * 队列设置
+ * @type {{initButton}}
+ */
 var queueSet = function () {
     var consoler = document.getElementsByClassName("consoler")[0];
     var spans = consoler.getElementsByTagName("span");
