@@ -9,6 +9,9 @@ var FloatLayer = function (element) {
     this.body = document.body;
     //获取浮出层内容
     this.ele = document.getElementById(element);
+    if(this.ele.getElementsByTagName('h1').length){
+        this.ele.getElementsByTagName('h1')[0].className +=' draggable';
+    }
 };
 
 /**
@@ -54,6 +57,38 @@ FloatLayer.prototype.init = function () {
         that.floatLayer.style.height = window.innerHeight + 'px';
         that.ele.style.margin= (window.innerHeight - that.eleHei) / 2 + 'px auto';
     }
+
+    DragDrop.enable();
+    DragDrop.addHandler('dragstart', function (event) {
+        //event.target.style.cursor = 'move';
+        DragDrop.diffX = event.x - event.target.parentNode.offsetLeft;
+        DragDrop.diffY = event.y - event.target.parentNode.offsetTop;
+        console.log('Start dragging');
+    });
+    DragDrop.addHandler('drag', function (event) {
+        var parent = event.target.parentNode, px, py;
+        px = event.x - DragDrop.diffX;
+        py = event.y - DragDrop.diffY;
+        if (px < 0) {
+            px = 0;
+        } else if (px + parent.offsetWidth > window.innerWidth) {
+            px = window.innerWidth - parent.offsetWidth;
+        }
+        if (py < 0) {
+            py = 0;
+        } else if (py + parent.offsetHeight > window.innerHeight) {
+            py = window.innerHeight - parent.offsetHeight;
+        }
+        parent.style.position = 'absolute';
+        // console.log(event.target.parentNode)
+        parent.style.margin = 0;
+        parent.style.left = px + 'px';
+        parent.style.top = py + 'px';
+        //console.log('dx:'+event.dx+',dy:'+event.dy);
+    });
+    DragDrop.addHandler('dragend', function () {
+        console.log('Dorpped');
+    });
 };
 
 /**

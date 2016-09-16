@@ -23,7 +23,7 @@ ColSortTable = function (element,sortfn,isForzen) {
     if(Object.prototype.toString.call(sortfn) =='[object Function]') {
         this.sortFn = sortfn;
     }else{
-        this.sortFn = '';
+        this.sortFn = null;
     }
 };
 
@@ -117,15 +117,22 @@ ColSortTable.prototype.creatTable = function (json) {
 ColSortTable.prototype.sort = function (name, revFlag) {
     var newBody = [], cName, tbCon = '';
     var tbody = this.tbData;
-    var sortfn = '';
+    var sortfn = (function (name) {
+        var n = name;
+        return function(value1,value2) {
+            return value2[n] - value1[n];
+        }
+    })(name);
 
     //判断this.sortFn对象是否为空，为空则调用默认方法
-    if (!this.sortFn) {
-        this.sortFn = function (value1, value2) {
-            return value1[name] - value2[name];
-        }
-    }else{
+    if (this.sortFn) {
         sortfn = this.sortFn(name);
+       /* sortfn = this.sortFn = function (name) {
+            var n = name;
+            return function(value1,value2) {
+                return value2[n] - value1[n];
+            }
+        }*/
     }
     //var newBody = bubbleSort(tbody);
     //var that = this;
